@@ -1,18 +1,18 @@
 {
   "version": 2,
   "routes": [
+    { "handle": "filesystem" },
     {
       "src": "/page1",
-      "dest": "/Take-Me-forward/src/page1.html"
+      "dest": "/src/page1.html"
     },
     {
       "src": "/page2",
-      "dest": "/Take-Me-forward/src/page2.html"
+      "dest": "/src/page2.html"
     },
     {
       "src": "/api/*",
-      "dest": "/Take-Me-forward/src/server.js"
+      "dest": "/src/server.js"
     }
   ]
 }
-

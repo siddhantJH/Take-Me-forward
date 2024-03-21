@@ -1,3 +1,8 @@
+
+LINK TO VERCEL - https://take-me-forward-eti5prm70-siddhants-projects-4d88e3ae.vercel.app/     (failed attemps tried my best)
+
+
+
 Landing Page
 
 ![landing page](https://github.com/siddhantJH/Take-Me-forward/assets/40361603/77d09040-e7a3-4f0b-9b21-f49c505a665c)

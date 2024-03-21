@@ -3,15 +3,15 @@
   "routes": [
     {
       "src": "/page1",
-      "dest": "/front-end/src/page1.html"
+      "dest": "/Take-Me-forward/src/page1.html"
     },
     {
       "src": "/page2",
-      "dest": "/front-end/src/page2.html"
+      "dest": "/Take-Me-forward/src/page2.html"
     },
     {
       "src": "/api/*",
-      "dest": "/front-end/src/server.js"
+      "dest": "/Take-Me-forward/src/server.js"
     }
   ]
 }

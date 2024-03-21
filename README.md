@@ -32,7 +32,7 @@ Backend:
 Functionality:
 Submission Form (Page 1):
 Users can fill out the form with their details including username, preferred code language, stdin, and source code.
-Upon submission, the data is sent to the backend server and stored in the MySQL database.
+Upon submission, the data is sent to the backend server and stored in the MongoDB database.
 
 Display Entries (Page 2):
 Retrieves all the submitted entries from the database and displays them in a tabular format.

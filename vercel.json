@@ -5,10 +5,6 @@
     { "src": "./src/page1.html", "use": "@vercel/static" },
     {"src":"./src/page2.html", "use":"@vercel/static"},
     { "src": "./src/server.js", "use": "@vercel/node" }
-  ]
-}
-}
-    }
   ],
   "routes": [
     {

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Submission Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%; /* Fill the entire screen */
+            max-width: 1400px;
+            height: 100% ;
+        }
+        .left-section {
+            flex: 1;
+            padding-right: 20px;
+        }
+        .right-section {
+            flex: 1;
+            padding-left: 20px;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align items to the left */
+            width: 100%;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-align: left; /* Left-align the labels */
+        }
+        input[type="text"],
+        select,
+        textarea {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box; /* Include padding and border in the width */
+        }
+        textarea {
+            height: 600px;
+            resize: vertical; /* Allow vertical resizing */
+        }
+        #stdin {
+            height: 100px; /* Reduced height for stdin */
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            margin:10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            width: 100%; /* Make submit button full width */
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var codeLanguage = document.getElementById("codelang").value;
+            var sourceCode = document.getElementById("sourcecode").value;
+
+            if (username === "" || codeLanguage === "" || sourceCode === "") {
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <h2>Code Submission Form</h2>
+            <form action="submit_code.php" method="post" onsubmit="return validateForm()">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="codelang">Preferred Code Language:</label>
+                <select id="codelang" name="codelang" required>
+                    <option value="">Select language</option>
+                    <option value="C++">C++</option>
+                    <option value="Java">Java</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+                </select>
+
+                <label for="stdin">Standard Input (stdin):</label>
+                <textarea id="stdin" name="stdin"></textarea>
+            </form>
+        </div>
+        <div class="right-section">
+            <label for="sourcecode">Source Code:</label>
+            <textarea id="sourcecode" name="sourcecode" required></textarea>
+
+            <input class="btn" type="submit" onclick="submitForm()" value="Submit">
+            <input id="openPage2" type="submit" onclick="nextPage()" value="Next Page">
+        </div>
+    </div>
+        <script>
+          
+            async function submitForm()
+            {
+                if(!validateForm())
+                {
+                alert("Please fill the form")
+                }else{
+                    var username = document.getElementById("username").value;
+                    var codeLanguage = document.getElementById("codelang").value;
+                    var sourceCode = document.getElementById("sourcecode").value;
+                    var stdin=document.querySelector('#stdin').value
+                    console.log(username)
+                    console.log(codeLanguage)
+                    console.log(sourceCode)
+                    console.log(stdin)
+                    let user={
+                        'username':username,
+                        'codeLanguage':codeLanguage,
+                        'sourceCode':sourceCode,
+                        'stdin':stdin
+                    }
+                 let json=await JSON.stringify(user)
+                 fetch('/submit',{method:"POST",body:json,headers: {"Content-type": "application/json; charset=UTF-8"}})
+                .then((response)=>response.json())
+                .then((json)=>{
+                    console.log(json)
+                    document.querySelector(".btn").value="Sent !! "
+                })
+                // did now included the catch block intentially 
+            }
+        }
+        function nextPage()
+        {
+            document.getElementById('openPage2').addEventListener('click', function() {
+            window.location.href = '/page2'; // Redirect to /page2 route
+        });
+
+        }
+        </script>
+</body>
+</html>

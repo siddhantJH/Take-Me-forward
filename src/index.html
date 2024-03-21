@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front end execution test</title>
+</head>
+<body>
+    <h1>This is a test!</h1>
+    <h3 id="name"></h3>
+    <h4 id="id"></h4>
+    <!-- in between this script tag we will have the script 
+    which we want the receiver browser to run  -->
+    <!-- we need to restart server everytime we make a change to this html -->
+   
+    <!-- now this front end code will make a request to backedn  -->
+    <script>
+        let users;
+    
+        fetch('/users')
+            .then((res) => res.json())
+            .then((data) => {
+                users = data;
+                // Now that users is populated, update the DOM or perform any other actions
+                document.querySelector('#id').innerText = String(users[0]['id']);
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    </script>
+    <!--when our browser runs the code which it receives from the server
+        if we want this code to load the data from the backend 
+    that we actully need to have the script itself make a request 
+    to the server and server will send the json data as a respionse  -->
+</body>
+</html>

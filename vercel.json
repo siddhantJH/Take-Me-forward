@@ -1,18 +1,15 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "src/server.js",
+      "use": "@now/node"
+    }
+  ],
   "routes": [
-    { "handle": "filesystem" },
     {
-      "src": "/page1",
-      "dest": "/src/page1.html"
-    },
-    {
-      "src": "/page2",
-      "dest": "/src/page2.html"
-    },
-    {
-      "src": "/api/*",
-      "dest": "/src/server.js"
+      "src": "/(.*)",
+      "dest": "src/index.js"
     }
   ]
 }

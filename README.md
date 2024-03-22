@@ -1,6 +1,6 @@
 
 LINK TO VERCEL - [click here](take-me-forward.vercel.app/page1) link to website WORKING!!!!!!!!!!)
-
+in case above doesn't work : take-me-forward.vercel.app/page1
 
 
 Landing Page  (take-me-forward.vercel.app/page1)

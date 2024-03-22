@@ -1,5 +1,5 @@
 
-LINK TO VERCEL - take-me-forward.vercel.app     (WORKING!!!!!!!!!!)
+LINK TO VERCEL - take-me-forward.vercel.app/page1     (WORKING!!!!!!!!!!)
 
 
 

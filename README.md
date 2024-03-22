@@ -3,15 +3,15 @@ LINK TO VERCEL - take-me-forward.vercel.app     (WORKING!!!!!!!!!!)
 
 
 
-Landing Page
+Landing Page  (take-me-forward.vercel.app/page1)
 
 ![landing page](https://github.com/siddhantJH/Take-Me-forward/assets/40361603/77d09040-e7a3-4f0b-9b21-f49c505a665c)
 
-Submit Sent 
+Submit Sent (take-me-forward.vercel.app/page1)
 
 ![Submit response](https://github.com/siddhantJH/Take-Me-forward/assets/40361603/1243231a-cedf-4989-bf65-f65be2b70507)
 
-Tubular Data 
+Tubular Data (take-me-forward.vercel.app/page2)
 
 ![stored Data](https://github.com/siddhantJH/Take-Me-forward/assets/40361603/f2b99591-347b-47f7-87ab-390725b3a391)
 
